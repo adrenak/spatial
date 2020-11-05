@@ -1,3 +1,10 @@
+# 1.0.0 (2020-11-05)
+
+
+### Features
+
+* Initial commit ([0431a90](https://github.com/adrenak/spatial/commit/0431a90ee9a9435d7fd036feb81b683c93d37729))
+
 # [2.1.0](https://github.com/adrenak/pointer/compare/v2.0.0...v2.1.0) (2020-11-05)
 
 
