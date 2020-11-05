@@ -1,3 +1,10 @@
+## [1.0.1](https://github.com/adrenak/spatial/compare/v1.0.0...v1.0.1) (2020-11-05)
+
+
+### Bug Fixes
+
+* Change package display name and remove unused custom Unity events ([5d4fd48](https://github.com/adrenak/spatial/commit/5d4fd48f86a076a460e9292726f16019bae09779))
+
 # 1.0.0 (2020-11-05)
 
 
