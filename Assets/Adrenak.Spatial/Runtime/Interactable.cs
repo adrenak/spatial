@@ -17,7 +17,7 @@ namespace Adrenak.Spatial {
         public UnityEvent onUp;
         public UnityEvent onDown;
         public float TimerElapsed => timer;
-        public float TimerElapsedNormalized => TimerElapsed / timerDuration; 
+        public float TimerElapsedNormalized => TimerElapsed / timerDuration;
         public bool IsOver { get; private set; }
         public Pointer Interactor => interactor;
 
@@ -61,7 +61,7 @@ namespace Adrenak.Spatial {
             IsOver = false;
             onHoverEnd.Invoke();
         }
-        
+
         public void Up() => onUp.Invoke();
 
         public void Down() => onDown.Invoke();

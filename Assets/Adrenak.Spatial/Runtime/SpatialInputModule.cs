@@ -7,7 +7,7 @@ namespace Adrenak.Spatial {
         public RaycastResult RaycastResult { get; private set; }
 
         public Pointer interactor;
-        
+
         Camera eventCamera;
 
         static SpatialInputModule instance;
@@ -16,13 +16,13 @@ namespace Adrenak.Spatial {
                 if (EventSystem.current == null)
                     EventSystem.current = FindObjectOfType<EventSystem>();
 
-                if(EventSystem.current == null)
+                if (EventSystem.current == null)
                     EventSystem.current = new GameObject("EventSystem").AddComponent<EventSystem>();
 
-                if (instance == null) 
+                if (instance == null)
                     instance = FindObjectOfType<SpatialInputModule>();
 
-                if (instance == null) 
+                if (instance == null)
                     instance = EventSystem.current.gameObject.AddComponent<SpatialInputModule>();
 
                 return instance;
@@ -56,7 +56,7 @@ namespace Adrenak.Spatial {
         }
 
         void InitializeCanvas(Canvas canvas, Camera eventCamera) {
-            if(canvas.renderMode != RenderMode.WorldSpace) {
+            if (canvas.renderMode != RenderMode.WorldSpace) {
                 Debug.LogWarning($"Canvas on {canvas.gameObject} GameObject is not in WorldSpace more and will not work with spatial input");
                 return;
             }
@@ -106,7 +106,7 @@ namespace Adrenak.Spatial {
             EventData.pointerPressRaycast = EventData.pointerCurrentRaycast;
             var target = EventData.pointerPressRaycast.gameObject;
 
-            if(lastPressed != null) {
+            if (lastPressed != null) {
                 ExecuteEvents.Execute(lastPressed, EventData, ExecuteEvents.deselectHandler);
                 lastPressed = null;
             }
@@ -141,7 +141,7 @@ namespace Adrenak.Spatial {
 
             var released = ExecuteEvents.GetEventHandler<IPointerClickHandler>(target);
 
-            if (EventData.pointerPress == released) 
+            if (EventData.pointerPress == released)
                 ExecuteEvents.Execute(EventData.pointerPress, EventData, ExecuteEvents.pointerClickHandler);
 
             ExecuteEvents.Execute(EventData.pointerPress, EventData, ExecuteEvents.pointerUpHandler);

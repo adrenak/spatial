@@ -31,7 +31,7 @@ namespace Adrenak.Spatial {
                 else
                     DisableRender();
             }
-            else 
+            else
                 DisableRender();
         }
 

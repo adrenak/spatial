@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 
 namespace Adrenak.Spatial {
-    public class KeyboardRaycaster : Pointer {
+    public class KeyboardPointer : Pointer {
         [SerializeField] Pointer pointer;
         [SerializeField] KeyCode keyCode;
 
