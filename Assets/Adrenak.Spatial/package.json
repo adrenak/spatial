@@ -1,0 +1,12 @@
+{
+    "name": "com.adrenak.spatial",
+    "version": "0.0.0",
+    "displayName": "Adrenak.Pointer",
+    "description": "Raycast based collider and uGUI interaction.",
+    "unity": "2018.4",
+    "author": {
+        "name": "Vatsal Ambastha",
+        "email": "ambastha.vatsal@gmail.com",
+        "url": "http://www.vatsalambastha.com"
+    }
+}
