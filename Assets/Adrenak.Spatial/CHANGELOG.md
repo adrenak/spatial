@@ -1,3 +1,10 @@
+## [1.1.1](https://github.com/adrenak/spatial/compare/v1.1.0...v1.1.1) (2020-11-07)
+
+
+### Bug Fixes
+
+* Disable pointer renderers when the pointer is not used for UI" ([d13c034](https://github.com/adrenak/spatial/commit/d13c034501a5ee90536d303298c7c06472190ce7))
+
 # [1.1.0](https://github.com/adrenak/spatial/compare/v1.0.2...v1.1.0) (2020-11-07)
 
 
