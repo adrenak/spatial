@@ -37,7 +37,7 @@ namespace Adrenak.Spatial {
                 }
             }
             else {
-                SetLength(defaultLength);
+                SetLength(0);
                 DisableMarker();
             }
         }
