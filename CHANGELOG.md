@@ -1,3 +1,10 @@
+## [1.1.2](https://github.com/adrenak/spatial/compare/v1.1.1...v1.1.2) (2020-11-07)
+
+
+### Bug Fixes
+
+* Eliminate 'interactor' as a term ([87c4a21](https://github.com/adrenak/spatial/commit/87c4a214300535af7a38bb9f9f6e77bb891c1d41))
+
 ## [1.1.1](https://github.com/adrenak/spatial/compare/v1.1.0...v1.1.1) (2020-11-07)
 
 
