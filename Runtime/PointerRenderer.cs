@@ -23,25 +23,26 @@ namespace Adrenak.Spatial {
 
             if (SpatialInputModule.Instance.interactor == pointer) {
                 float distance;
-                if (CheckCanvasHit(out distance))
-                    EnableRender(distance);
-                else if (CheckInteractableHit(out distance))
-                    EnableRender(distance);
-                else
-                    DisableRender();
+                if (CheckCanvasHit(out distance)) {
+                    SetLength(distance);
+                    EnableMarker(distance);
+                }
+                else if (CheckInteractableHit(out distance)) {
+                    SetLength(distance);
+                    EnableMarker(distance);
+                }
+                else {
+                    SetLength(defaultLength);
+                    DisableMarker();
+                }
             }
-            else
-                DisableRender();
+            else {
+                SetLength(defaultLength);
+                DisableMarker();
+            }
         }
 
-        void EnableRender(float distance) {
-            if (marker != null) {
-                if (!marker.gameObject.activeInHierarchy)
-                    marker.gameObject.SetActive(true);
-                marker.position = transform.position + transform.forward * distance;
-                marker.LookAt(transform);
-            }
-
+        void SetLength(float distance) {
             if (lineRenderer != null) {
                 lineRenderer.enabled = true;
                 lineRenderer.SetPosition(0, ray.origin);
@@ -49,12 +50,18 @@ namespace Adrenak.Spatial {
             }
         }
 
-        void DisableRender() {
-            if(marker != null)
+        void DisableMarker() {
+            if (marker != null)
                 marker.gameObject.SetActive(false);
+        }
 
-            if(lineRenderer != null)
-                lineRenderer.enabled = false;
+        void EnableMarker(float distance) {
+            if (marker != null) {
+                if (!marker.gameObject.activeInHierarchy)
+                    marker.gameObject.SetActive(true);
+                marker.position = transform.position + transform.forward * distance;
+                marker.LookAt(transform);
+            }
         }
 
         bool CheckCanvasHit(out float distance) {

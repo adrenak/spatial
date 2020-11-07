@@ -2,8 +2,7 @@
 
 namespace Adrenak.Spatial {
     public class KeyboardPointer : Pointer {
-        [SerializeField] Pointer pointer;
-        [SerializeField] KeyCode keyCode;
+        [SerializeField] KeyCode keyCode = KeyCode.Space;
 
         new void Update() {
             base.Update();
