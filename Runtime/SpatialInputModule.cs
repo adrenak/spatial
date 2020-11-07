@@ -6,7 +6,7 @@ namespace Adrenak.Spatial {
         public PointerEventData EventData { get; private set; }
         public RaycastResult RaycastResult { get; private set; }
 
-        public Pointer interactor;
+        public Pointer pointer;
 
         Camera eventCamera;
 
@@ -65,7 +65,7 @@ namespace Adrenak.Spatial {
 
         bool lastInputReady = false;
         public override void Process() {
-            PointEventCamera(interactor.transform);
+            PointEventCamera(pointer.transform);
 
             eventSystem.RaycastAll(EventData, m_RaycastResultCache);
             EventData.pointerCurrentRaycast = FindFirstRaycast(m_RaycastResultCache);
@@ -99,7 +99,7 @@ namespace Adrenak.Spatial {
             eventCamera.transform.localEulerAngles = Vector3.zero;
         }
 
-        public virtual bool InputReady() => interactor.isDown;
+        public virtual bool InputReady() => pointer.isDown;
 
         GameObject lastPressed;
         void Down() {

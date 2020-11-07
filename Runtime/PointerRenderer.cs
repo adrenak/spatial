@@ -21,7 +21,7 @@ namespace Adrenak.Spatial {
             Transform pt = pointer.transform;
             ray = new Ray(pt.position, pt.forward);
 
-            if (SpatialInputModule.Instance.interactor == pointer) {
+            if (SpatialInputModule.Instance.pointer == pointer) {
                 float distance;
                 if (CheckCanvasHit(out distance)) {
                     SetLength(distance);
