@@ -8,7 +8,7 @@ namespace Adrenak.Spatial {
     public class Pointer : MonoBehaviour {
         public LayerMask m_ExcludedLayers = 0;
         public bool debug = true;
-        public float rayLength = 1000;
+        public float rayLength = 10;
         public bool isDown;
 
         bool wasDown;
