@@ -8,7 +8,7 @@ namespace Adrenak.Spatial {
     public class Pointer : MonoBehaviour {
         public LayerMask m_ExcludedLayers = 0;
         public bool debug = true;
-        public bool doRaycast;
+        public float rayLength = 1000;
         public bool isDown;
 
         bool wasDown;
@@ -27,17 +27,12 @@ namespace Adrenak.Spatial {
         }
 
         void Raycast() {
-            if (!doRaycast) {
-                TryDeactivateLastInteractable();
-                return;
-            }
-
             ray = new Ray(transform.position, transform.forward);
 
             if (debug)
-                Debug.DrawRay(transform.position, transform.forward * 100000, Color.blue, Time.deltaTime);
+                Debug.DrawRay(transform.position, transform.forward * rayLength, Color.blue, Time.deltaTime);
 
-            if (Physics.Raycast(ray, out hit, Mathf.Infinity, ~m_ExcludedLayers)) {
+            if (Physics.Raycast(ray, out hit, rayLength, ~m_ExcludedLayers)) {
                 currentInteractable = hit.collider.gameObject.GetComponent<Interactable>();
 
                 if (currentInteractable == null) {

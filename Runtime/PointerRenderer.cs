@@ -7,7 +7,6 @@ namespace Adrenak.Spatial {
         LineRenderer lineRenderer = null;
         public Transform marker = null;
 
-        public float maxLength = Mathf.Infinity;
         public float defaultLength = 1;
 
         Pointer pointer = null;
@@ -62,7 +61,7 @@ namespace Adrenak.Spatial {
             var result = SpatialInputModule.Instance.RaycastResult;
 
             if (result.isValid) {
-                distance = Mathf.Min(result.distance, maxLength);
+                distance = result.distance;
                 return true;
             }
             else {
