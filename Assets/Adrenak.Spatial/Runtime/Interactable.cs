@@ -19,10 +19,10 @@ namespace Adrenak.Spatial {
         public float TimerElapsed => timer;
         public float TimerElapsedNormalized => TimerElapsed / timerDuration;
         public bool IsOver { get; private set; }
-        public Pointer Interactor => interactor;
+        public Pointer Pointer => pointer;
 
         float timer = 0;
-        Pointer interactor;
+        Pointer pointer;
 
         protected void Update() {
             if (IsOver) {
@@ -39,7 +39,7 @@ namespace Adrenak.Spatial {
             }
             else {
                 timer = 0;
-                interactor = null;
+                pointer = null;
             }
         }
 
@@ -50,14 +50,14 @@ namespace Adrenak.Spatial {
             Gizmos.DrawSphere(transform.position, range);
         }
 
-        public void Over(Pointer interactor) {
-            this.interactor = interactor;
+        public void Over(Pointer pointer) {
+            this.pointer = pointer;
             IsOver = true;
             onHoverBegin.Invoke();
         }
 
-        public void Out(Pointer interactor) {
-            this.interactor = interactor;
+        public void Out(Pointer pointer) {
+            this.pointer = pointer;
             IsOver = false;
             onHoverEnd.Invoke();
         }
