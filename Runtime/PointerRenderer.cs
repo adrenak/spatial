@@ -51,8 +51,11 @@ namespace Adrenak.Spatial {
         }
 
         void DisableRender() {
-            marker.gameObject.SetActive(false);
-            lineRenderer.enabled = false;
+            if(marker != null)
+                marker.gameObject.SetActive(false);
+
+            if(lineRenderer != null)
+                lineRenderer.enabled = false;
         }
 
         bool CheckCanvasHit(out float distance) {
