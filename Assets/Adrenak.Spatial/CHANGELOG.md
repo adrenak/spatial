@@ -1,3 +1,15 @@
+# [1.1.0](https://github.com/adrenak/spatial/compare/v1.0.2...v1.1.0) (2020-11-07)
+
+
+### Bug Fixes
+
+* Default ray renderer length fixed ([4fe850b](https://github.com/adrenak/spatial/commit/4fe850b6ec669d1353d768c59817b97e2b82b5bf))
+
+
+### Features
+
+* Add ray length to Pointer.cs ([444957a](https://github.com/adrenak/spatial/commit/444957ac04e007716b5eaf5eacf684f4e64ee2f1))
+
 ## [1.0.2](https://github.com/adrenak/spatial/compare/v1.0.1...v1.0.2) (2020-11-07)
 
 
